@@ -1,0 +1,12 @@
+{
+	"name": "frontline",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start:bonus": "node Bonus.js",
+		"start:basic": "node Basic.js"
+	},
+	"author": "",
+	"license": "ISC"
+}
