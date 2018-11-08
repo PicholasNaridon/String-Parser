@@ -6,11 +6,11 @@ This is my take on string parser excercise that was sent over to me.
 
 ## Setup and Execution
 
-No extra packages have been added that are necssary to run the scripts. You can start either with the commands below.
+The 'npm install' will add Mocha and Chai for the test suite, and 'npm start' will execute the index.js script, which in turn runs both the basic/bonus versions.
 
 ```
-> $ npm run start:bonus 
-> $ npm run start:basic 
+> $ npm install
+> $ npm start
 
 ```
 
@@ -20,6 +20,7 @@ No extra packages have been added that are necssary to run the scripts. You can 
 - Multiple values can have children
 - Children can have children
 - Alpha sorting puts child elements immediately after parent 
+- Allow user to choose to sort or not sort 
 
 ## Thought process
 
