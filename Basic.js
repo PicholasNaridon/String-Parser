@@ -1,7 +1,3 @@
-var string1 = '(id,created,employee(id,firstname,employeeType(id), lastname),location)';
-var string2 = '(id,created,employee(id,firstname,employeeType(id),lastname),location,test(wow,neat))';
-var string3 = '(id,created,employee(id,firstname,employeeType(id),lastname),location(state,city,zip),favcolor)';
-
 var replaceParenthesis = (formattedString) => {
 	var removeFirst = formattedString.replace(/\(/, '+,');
 	var removeOpen = removeFirst.replace(/\(/g, ',+,');
@@ -42,6 +38,9 @@ var execute = (string) => {
 	return result;
 };
 
-console.log(execute(string1));
-console.log(execute(string2));
-console.log(execute(string3));
+module.exports = {
+	execute,
+	addDashes,
+	replaceParenthesis,
+	splitToArray
+};
