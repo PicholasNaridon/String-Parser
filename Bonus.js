@@ -24,6 +24,7 @@ var createJson = (dataArray) => {
 			}
 			return;
 		}
+
 		if (ele != '+' && ele != '-') {
 			if (dataArray[i + 1] != '+') {
 				dataArray[i + 1] == '-' ? (result += `"${ele.trim()}": ""`) : (result += `"${ele.trim()}": "",`);
