@@ -6,7 +6,7 @@ describe('replaceParenthesis()', function() {
 		expect(bonusParser.replaceParenthesis('(')).to.equal('+,');
 	});
 
-	it("should replace '(' with '+' ", function() {
+	it("should replace ')' with '-' ", function() {
 		expect(bonusParser.replaceParenthesis(')')).to.equal(',-');
 	});
 

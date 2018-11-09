@@ -32,6 +32,7 @@ var addDashes = (dataArray) => {
 };
 // add something to return the dashes seprately replace line 31 with a function
 var execute = (string) => {
+	console.log(`Starting value:\n\n'${string}'\n`);
 	var formattedString = replaceParenthesis(string);
 	var formattedArray = splitToArray(formattedString);
 	var result = addDashes(formattedArray);

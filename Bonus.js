@@ -1,4 +1,7 @@
 var replaceParenthesis = (formattedString) => {
+	if (!formattedString instanceof String) {
+		throw 'Entry must be a string';
+	}
 	var removeFirst = formattedString.replace(/\(/, '+,');
 	var removeOpen = removeFirst.replace(/\(/g, ',+,');
 	var removeClose = removeOpen.replace(/\)/g, ',-');
@@ -6,7 +9,13 @@ var replaceParenthesis = (formattedString) => {
 };
 
 var splitToArray = (stringWithOperators) => {
-	return stringWithOperators.split(',');
+	var parsed = stringWithOperators.split(',');
+
+	if (!parsed instanceof Array) {
+		throw 'Failed to split, check formatting';
+	}
+
+	return parsed;
 };
 
 var createJson = (dataArray) => {
@@ -33,7 +42,13 @@ var createJson = (dataArray) => {
 			}
 		}
 	});
-	return JSON.parse(result);
+	var output = JSON.parse(result);
+
+	if (!output instanceof Object) {
+		throw 'Failed to parse data, check formatting';
+	}
+
+	return output;
 };
 
 var createList = (jsonData, sort, depth) => {
@@ -56,6 +71,7 @@ var createList = (jsonData, sort, depth) => {
 };
 
 var execute = (string, sorted) => {
+	console.log(`Starting value:\n\n'${string}'\n`);
 	var formattedString = replaceParenthesis(string);
 	var formattedArray = splitToArray(formattedString);
 	var object = createJson(formattedArray);
