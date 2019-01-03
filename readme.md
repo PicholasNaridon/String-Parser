@@ -24,7 +24,7 @@ The 'npm install' will add Mocha and Chai for the test suite, and 'npm start' wi
 
 ## Thought process
 
-I wanted to briefly explain how I went about tackling the problem. The first thing that came to mind when looking at the test string was that it looked lie a 2D array or a JSON object. You have a series of attributes with other attributes nested inside.
+I wanted to briefly explain how I went about tackling the problem. The first thing that came to mind when looking at the test string was that it looked like a 2D array or a JSON object. You have a series of attributes with other attributes nested inside.
 
 The first challenge was how around how to parse the data. In my first attempt I tried doing something where I changed all the opening and closing parenthesis to "+" and "-". After which I split the string into an array to iterate through. That left me with something like this:
 
@@ -77,7 +77,7 @@ I got to a point where I had an output like the example below, and just realized
 ]
 ```
 
-From the begining it seemed like some sort of recursive function would make sense, but I always seem to struggle with them so I tried to avoid it. Ultimately that's the route I ended up taking. Instead of parsing the original string into an array or an array of objects, I wound up parsing it into a single object instead.
+From the begining it seemed like some sort of recursive function would make sense, but I always seem to struggle with them so I tried to avoid it. Ultimately that's the route I ended up taking. Instead of parsing the original string into an array or an array of objects, I wound up parsing it into a single JSON object instead.
 
 From there I went through and dumped out all the keys of the object, and iterated over the object using those keys. If the value associated with a key was equal to an empty string I just appended the key to a template literal for output. If the value associated with a key was equal to another object, I increased "depth" (still used for adding the dashes) and then called the same function again to iterate over the child value.
 
